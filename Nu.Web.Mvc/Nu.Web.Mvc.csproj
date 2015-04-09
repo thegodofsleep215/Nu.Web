@@ -45,6 +45,7 @@
     <Compile Include="Attributes\NuModelAttribute.cs" />
     <Compile Include="FrontController\Command.cs" />
     <Compile Include="Attributes\NuControllerAttribute.cs" />
+    <Compile Include="FrontController\FrontController.cs" />
     <Compile Include="FrontController\IMethodExecution.cs" />
     <Compile Include="FrontController\MethodInfoExecution.cs" />
     <Compile Include="Attributes\TypedCommandAttribute.cs" />
