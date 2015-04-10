@@ -46,10 +46,7 @@
     <Compile Include="FrontController\Command.cs" />
     <Compile Include="Attributes\NuControllerAttribute.cs" />
     <Compile Include="FrontController\FrontController.cs" />
-    <Compile Include="FrontController\IMethodExecution.cs" />
     <Compile Include="FrontController\MethodInfoExecution.cs" />
-    <Compile Include="Attributes\TypedCommandAttribute.cs" />
-    <Compile Include="FrontController\Usage.cs" />
     <Compile Include="View\ViewModelEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

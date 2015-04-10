@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nu.Web", "Nu.Web\Nu.Web.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nu.Web.Mvc", "Nu.Web.Mvc\Nu.Web.Mvc.csproj", "{99CE021B-EEDB-40BF-ADB4-EFDF3D92D6BF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{17661B96-271F-47B5-BAE1-03AB4D458DC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Nu.Web.Mvc", "Test.Nu.Web.Mvc\Test.Nu.Web.Mvc.csproj", "{ED072EAD-8559-4110-8409-56888A096582}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +25,15 @@ Global
 		{99CE021B-EEDB-40BF-ADB4-EFDF3D92D6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99CE021B-EEDB-40BF-ADB4-EFDF3D92D6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99CE021B-EEDB-40BF-ADB4-EFDF3D92D6BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED072EAD-8559-4110-8409-56888A096582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED072EAD-8559-4110-8409-56888A096582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED072EAD-8559-4110-8409-56888A096582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED072EAD-8559-4110-8409-56888A096582}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ED072EAD-8559-4110-8409-56888A096582} = {17661B96-271F-47B5-BAE1-03AB4D458DC9}
 	EndGlobalSection
 EndGlobal

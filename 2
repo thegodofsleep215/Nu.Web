@@ -1,0 +1,33 @@
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Nu.Web.ViewModel.Attributes;
+
+namespace Test.Nu.Web.Mvc
+{
+    [TestClass]
+    public class FrontControllerTest
+    {
+
+    }
+
+    public class StubbedController
+    {
+        [NuController]
+        public StubbedModel EmptyValue()
+        {
+            return new StubbedModel {Value = "default"};
+        }
+
+        [NuController]
+        public StubbedModel EmptyValue(string value)
+        {
+            return new StubbedModel {Value = value};
+        }
+        
+    }
+
+    public class StubbedModel
+    {
+        public string Value { get; set; }
+    }
+}

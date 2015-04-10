@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Nu.Web.ViewModel.FrontController
 {
-    class MethodInfoExecution : IMethodExecution
+    public class MethodInfoExecution 
     {
 
         public MethodInfo Method { get; set; }
@@ -13,9 +13,9 @@ namespace Nu.Web.ViewModel.FrontController
 
         #region MethodExecution Members
 
-        public string Execute(object[] args)
+        public object Execute(object[] args)
         {
-            return (string)Method.Invoke(CommandObject, args);
+            return Method.Invoke(CommandObject, args);
         }
 
         #endregion
@@ -26,9 +26,8 @@ namespace Nu.Web.ViewModel.FrontController
             CommandObject = commandObject;
         }
 
-        public bool CanExecute(object[] args, out object[] finalParams, out string error)
+        public bool CanExecute(object[] args, out object[] finalParams)
         {
-            error = "";
             object[] p = args;
             var mParams = Method.GetParameters();
             finalParams = new object[mParams.Count()];
@@ -45,7 +44,7 @@ namespace Nu.Web.ViewModel.FrontController
                         int garbage;
                         if (int.TryParse((string)p[i], out garbage))
                         {
-                            error = "Type Error: Cannot convert an interger type to an Enum, please use the string version of the enum.";
+                            //error = "Type Error: Cannot convert an interger type to an Enum, please use the string version of the enum.";
                             return false;
                         }
                         finalParams[i] = Enum.Parse(pInfo.ParameterType, (string)p[i], true);
@@ -74,7 +73,7 @@ namespace Nu.Web.ViewModel.FrontController
                             }
                             else
                             {
-                                error = string.Format("Unexpected Dicionary: A dictionary for optional parameters must be the last parameter passed.");
+                                //error = string.Format("Unexpected Dicionary: A dictionary for optional parameters must be the last parameter passed.");
                             }
                         }
                         else
@@ -85,7 +84,7 @@ namespace Nu.Web.ViewModel.FrontController
                 }
                 catch
                 {
-                    error = String.Format("Type Error: Cannot convert '{0}' to a(n) '{1}'", p[i], pInfo.ParameterType.Name);
+                    //error = String.Format("Type Error: Cannot convert '{0}' to a(n) '{1}'", p[i], pInfo.ParameterType.Name);
                     return false;
                 }
             }
@@ -116,7 +115,7 @@ namespace Nu.Web.ViewModel.FrontController
                         int garbage;
                         if (int.TryParse(optionalMap[okey], out garbage))
                         {
-                            error = "Type Error: Cannot convert an interger type to an Enum, please use the string version of the enum.";
+                            //error = "Type Error: Cannot convert an interger type to an Enum, please use the string version of the enum.";
                             return false;
                         }
                         finalParams[i] = Enum.Parse(pInfo.ParameterType, (string)p[i], true);
@@ -133,13 +132,13 @@ namespace Nu.Web.ViewModel.FrontController
                 }
                 else
                 {
-                    error = String.Format("Syntax Error: Not enought parameters, '{0}' did not have a default value.", pInfo.Name);
+                    //error = String.Format("Syntax Error: Not enought parameters, '{0}' did not have a default value.", pInfo.Name);
                     return false;
                 }
             }
             if (optionalMap.Count > 0)
             {
-                error = "Parameter Error: Unknown default parameters were given.";
+                //error = "Parameter Error: Unknown default parameters were given.";
                 return false;
             }
             return true;
