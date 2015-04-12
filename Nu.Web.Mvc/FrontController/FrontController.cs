@@ -62,7 +62,9 @@ namespace Nu.Web.ViewModel.FrontController
                 throw new DuplicateNameException("A controller already exists with the name, " + method.Name);
             }
             var mex = GetMethodExectuion(method, commandObject);
-            commands[method.Name] = new Command(method.Name, mex);
+            var att = method.GetCustomAttribute<NuControllerAttribute>();
+            var name = att.Command ?? method.Name;
+            commands[method.Name] = new Command(name, mex);
         }
       
         /// <summary>

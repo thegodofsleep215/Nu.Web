@@ -9,16 +9,12 @@ namespace Nu.Web.ViewModel.Attributes
     public class NuControllerAttribute : Attribute
     {
         public string Command { get; set; }
-        public string HelpText { get; set; }
-
-        public NuControllerAttribute(string command, string helpText)
+        public NuControllerAttribute(string command)
         {
             Command = command;
-            HelpText = helpText;
         }
 
-        public NuControllerAttribute()
-        {
-        }
+        public NuControllerAttribute() { }
+
     }
 }
